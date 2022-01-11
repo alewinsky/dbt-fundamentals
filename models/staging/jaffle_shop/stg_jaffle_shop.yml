@@ -9,6 +9,10 @@ models:
         tests:
           - unique
           - not_null
+      - name: first_name
+        description: Customer first name, first letter capitalised
+      - name: last_name
+        description: Customer last name, first ititial (capitalised) only, include full stop at end of string
   - name: stg_orders
     columns: 
       - name: order_id
@@ -16,6 +20,7 @@ models:
           - unique
           - not_null
       - name: status
+        description: '{{ doc("order_status")}}'
         tests:
           - accepted_values:
               values:

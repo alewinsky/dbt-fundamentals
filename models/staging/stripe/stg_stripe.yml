@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: stg_payments
+    description: Customer payments data from stripe POS system
+    columns:
+      - name: payment_id
+        description: Primary key for all payments
+        tests:
+          - unique
+          - not_null
+      - name: payment_status
+        description: '{{ doc("payment_status")}}' 
